@@ -16,8 +16,9 @@ was designed to support the editqf vim script
 (http://www.vim.org/scripts/script.php?script_id=3557) but it also works
 very well stand alone.
 
-The latest development version is available at
-https://github.com/jceb/vim-hier.
+This script can be downloaded from
+http://www.vim.org/scripts/script.php?script_id=3564. The latest development
+version is available at https://github.com/jceb/vim-hier.
 
 ==========================================================================
 USAGE                                                           *hier-usage*
@@ -31,24 +32,35 @@ The following commands are provided:
 ==========================================================================
 CUSTOMIZATION                                           *hier-customization*
 
-The hightlight group can be customized by setting the following variable.
-Setting a variable to the empty string "" will disable highlighting of that
-group:
-	let g:hier_highlight_group_qf  = 'ErrorMsg'
-	let g:hier_highlight_group_loc = 'Search'
+The highlight group can be customized by setting the following variables.
+Setting a variable to the string "NONE" will disable highlighting of that
+group. Every type can be highlighted differently (error, warning, info):
+	let g:hier_highlight_group_qf   = 'SpellBad'
+	let g:hier_highlight_group_qfw  = 'SpellLocal'
+	let g:hier_highlight_group_qfi  = 'SpellRare'
+
+	let g:hier_highlight_group_loc  = 'SpellBad'
+	let g:hier_highlight_group_locw = 'SpellLocal'
+	let g:hier_highlight_group_loci = 'SpellRare'
 
 Enable/disable highlighting highlighting by default:
-	let g:hier_enabled             = 1
+	let g:hier_enabled              = 1
 
 ==========================================================================
 INSTALLATION                                             *hier-installation*
 
-1. Download hier.vba.gz 
-2. Open file in vim and run :so % to install plugin 
+1. Download hier.vba.gz
+2. Open file in vim and run :so % to install plugin
 3. Restart vim
 
 ==========================================================================
 CHANGLOG                                                    *hier-changelog*
+
+1.2
+- add highlighting groups for warning and info entries
+- make clearing of highlighting behave more graceful towards other
+  plugins
+- add function s:Getlist to remove duplicated code
 
 1.1
 - add commands :HierStart and :HierStop

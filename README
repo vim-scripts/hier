@@ -1,15 +1,16 @@
 This is a mirror of http://www.vim.org/scripts/script.php?script_id=3564
 
-DESCRIPTION
+DESCRIPTION                                               *hier-description*
 
-Highlight quickfix errors and location list entries in buffer. This plugin
-was designed to support the editqf vim script (vimscript#3557) but it also
-works very well stand alone.
+Highlight quickfix errors and location list entries in buffer. This
+plugin was designed to support the editqf vim script (vimscript#3557)
+but it also works very well stand alone.
 
-The latest development version is available at
-https://github.com/jceb/vim-hier.
+This script can be downloaded from vimscript#3564. The latest
+development version is available at https://github.com/jceb/vim-hier.
 
-USAGE
+==========================================================================
+USAGE                                                           *hier-usage*
 
 The following commands are provided:
 	:HierStart		" enable hier highlighting
@@ -17,13 +18,19 @@ The following commands are provided:
 	:HierUpdate		" update error highlighting for current buffer
 	:HierClear		" remove highlighting - it will be displayed again when :HierUpdate is called
 
-CUSTOMIZATION
+==========================================================================
+CUSTOMIZATION                                           *hier-customization*
 
-The highlight group can be customized by setting the following variable.
-Setting a variable to the empty string "" will disable highlighting of that
-group:
-	let g:hier_highlight_group_qf  = 'ErrorMsg'
-	let g:hier_highlight_group_loc = 'Search'
+The highlight group can be customized by setting the following variables.
+Setting a variable to the string "NONE" will disable highlighting of that
+group. Every type can be highlighted differently (error, warning, info):
+	let g:hier_highlight_group_qf   = 'SpellBad'
+	let g:hier_highlight_group_qfw  = 'SpellLocal'
+	let g:hier_highlight_group_qfi  = 'SpellRare'
+
+	let g:hier_highlight_group_loc  = 'SpellBad'
+	let g:hier_highlight_group_locw = 'SpellLocal'
+	let g:hier_highlight_group_loci = 'SpellRare'
 
 Enable/disable highlighting highlighting by default:
-	let g:hier_enabled             = 1
+	let g:hier_enabled              = 1
