@@ -22,7 +22,7 @@ The following commands are provided:
 CUSTOMIZATION                                           *hier-customization*
 
 The highlight group can be customized by setting the following variables.
-Setting a variable to the string "NONE" will disable highlighting of that
+Setting a variable to the string "" will disable highlighting of that
 group. Every type can be highlighted differently (error, warning, info):
 	let g:hier_highlight_group_qf   = 'SpellBad'
 	let g:hier_highlight_group_qfw  = 'SpellLocal'
